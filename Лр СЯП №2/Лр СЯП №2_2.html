@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Лр СЯП №2_2</title>
+    </head>
+    <body>
+        <script type='text/javascript'>
+            let table = document.createElement('table');
+            let a = prompt("Введите первое число");
+            let b = prompt("Введите второе число");
+            for(let i = 0; i <= a; i++) {
+                let tr = document.createElement('tr')
+            
+             for (j = 0; j <= b; j++) {
+                    td = tr.appendChild(document.createElement('td'));
+                    if(i==0)
+                        td.append(j);
+                    else if (j==0)
+                        td.append(i);
+                    else
+                        td.append(i*j);
+                }
+
+                table.appendChild(tr);
+            }
+            document.body.append(table);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    form {
+      width: 50%;
+    }
+  </style>
+</head>
+<body>
+  <form name="info">
+    <fieldset>
+      <textarea cols="21" rows="3" name="facultet">Инженерно-экономический</textarea>
+      <br><br>
+      <input type='text' placeholder='Фамилия' name='secondname' />
+      <br>
+      <input type='text' placeholder='Имя' name='firstname' />
+      <br>
+      <p>Курс</p>
+      <input type='radio' name='kr' value='1' /> 1
+      <input type='radio' name='kr' value='2' /> 2
+      <input type='radio' name='kr' value='3' /> 3
+      <input type='radio' name='kr' value='3' /> 4
+      <br> <br>
+      <p>Cпециальность:</p>
+      <select name="spec">
+        <option>маркетинг</option>
+        <option>менеджмент</option>
+        <option>экономика</option>
+      </select>
+      <br><br>
+     <p>Предметы:</p> 
+      <input type="checkbox" name="subject" value="Высшая математика" />Высшая математика
+      <input type="checkbox" name="subject" value="Политология" />Политология
+      <input type="checkbox" name="subject" value="История" />История
+      <input type="checkbox" name="subject" value="Экономика" />Экономика
+      <input type="checkbox" name="subject" value="Ин язык" />Ин язык
+      <br><br>
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+      <br><br>
+      <input type='button' value='список' onclick='z4()' />
+    </fieldset>
+  </form>
+  <br><br>
+  <form id="zad4">
+  </form>
+  <script>
+    function z4() {
+      let form = document.forms.info;
+      let m = 0;
+      for (let i = 0; i < form.elements.subject.length; i++) {
+        if (form.elements.subject[i].checked) {
+          m += "<option>" + form.elements.subject[i].value + "</option>";
+        }
+      }
+      document.getElementById("zad4").innerHTML = ("<select>" + m + "</select>");
+    }
+  </script>
+</body>
+</html>

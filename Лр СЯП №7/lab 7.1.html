@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    form {
+      width: 50%;
+    }
+  </style>
+</head>
+<body>  
+  <form name="info">
+    <fieldset>     <!--позволяют сгруппировать желаемую часть формы-->
+      <textarea cols="30" rows="3" name="facultet">Факультет Информационных Технологий</textarea>
+      <br><br>
+      <input type='text' placeholder='Фамилия' name='secondname' />
+      <br>
+      <input type='text' placeholder='Имя' name='firstname' />
+      <p>Курс</p>
+      <input type='radio' name='kr' value='1' /> 1
+      <input type='radio' name='kr' value='2' /> 2
+      <input type='radio' name='kr' value='3' /> 3
+      <input type='radio' name='kr' value='3' /> 4
+      <br><br>
+      <p>Cпециальность:</p>
+      <select name="spec">
+        <option>ПОИТ</option>
+        <option>ИСиТ</option>
+        <option>ПОИМБС</option>
+        <option>ДЭВИ</option>
+      </select>
+      <br><br>
+      <p>Предметы:</p>
+      <input type="checkbox" name="subject" value="ОИТ" />ОИТ
+      <input type="checkbox" name="subject" value="ОАП" />ОАП
+      <input type="checkbox" name="subject" value="История" />История
+      <input type="checkbox" name="subject" value="Физика" />Физика
+      <input type="checkbox" name="subject" value="Математика" />Математика
+      <br><br>
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+      <br><br>
+      <input type='button' value='Напечатать' onclick='Forma()' />
+      <input type='button' value='список' onclick='z4()' />
+    </fieldset>
+  </form>
+  <div id="fr"> </div>
+  <script>
+    function Forma() {
+      let form = document.forms.info;
+      document.getElementById("fr").innerHTML= (" <p> " + form.elements.facultet.value + " </p> Студент " + 
+      form.elements.secondname.value + " " + form.elements.firstname.value + " специальности " + 
+      form.elements.spec.value + " курс " + form.elements.kr.value + " должен сдавать следующие предметы:");
+
+      for (let i = 0; i < form.elements.subject.length; i++) {
+        if (form.elements.subject[i].checked) {
+          document.getElementById("fr").innerHTML += ("<li>" + form.elements.subject[i].value + "</li>");
+        }
+      }
+      document.getElementById("fr").innerHTML;
+    }
+  </script>
+ <form name="info">
+  <fieldset>
+    <textarea cols="21" rows="3" name="Анкета">Анкета на кто хочет стаь милиенором</textarea>
+    <br><br>
+    <input type='text' placeholder='Фамилия' name='secondname' />
+    <br>
+    <input type='text' placeholder='Имя' name='firstname' />
+    <br>
+    <p>Ты хочешь получить миллион?</p>
+    <input type='radio' name='kr' value='1' /> Да
+    <input type='radio' name='kr' value='2' /> Нет
+    <input type='radio' name='kr' value='3' /> Не знаю
+    <input type='radio' name='kr' value='4' /> Я бомж
+    <br> <br>
+    <p>Кто ты :</p>
+    <select name="spec">
+      <option>молодой</option>
+      <option>взрослый</option>
+      <option>старый</option>
+    </select>
+    <br><br>
+   <p>Опиши себя:</p> 
+    <input type="checkbox" name="subject" value="ум" />Умный(ая)
+    <input type="checkbox" name="subject" value="кр" />Красивый(ая)
+    <input type="checkbox" name="subject" value="доб" />Добрый(ая)
+    <input type="checkbox" name="subject" value="об" />Общительный(ая)
+    <input type="checkbox" name="subject" value="булочка" />Просто булочка с корицей :3
+    <br><br>
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+    <br><br>
+    <input type='button' value='список' onclick='z4()' />
+  </fieldset>
+</form>
+<br><br>
+<form id="zad4">
+</form>
+<script>
+  function z4() {
+    let form = document.forms.info;
+    let m = 0;
+    for (let i = 0; i < form.elements.subject.length; i++) {
+      if (form.elements.subject[i].checked) {
+        m += "<option>" + form.elements.subject[i].value + "</option>";
+      }
+    }
+    document.getElementById("zad4").innerHTML = ("<select>" + m + "</select>");
+  }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ЛР СЯП №1_8</title>
+    </head>
+    <body>
+        <script>
+            
+            var data = "Has Error"; 
+            try 
+            { 
+            var user = JSON.parse(data);  
+            }
+            catch (e) 
+            { 
+            alert( "Извините, в данных ошибка, мы попробуем получить их ещё раз" ); 
+            alert( e.name ); 
+            alert( e.message ); 
+            } 
+            
+        </script>
+    </body>
+</html>

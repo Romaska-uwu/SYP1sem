@@ -1,0 +1,131 @@
+<!DOCTYPE html>       //Определения функции и объекта//
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Лр СЯП №2_1</title>
+        <style>
+            * {
+                color:crimson;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            body {
+                min-height: 100vh;
+                min-width: 100vw;
+                background: #FDF2CA;
+            }
+        </style>
+        <script>
+            function numb1() {
+                alert("Вас приветсвует учебный центр");
+                let name = prompt("Ваше имя");
+                alert("Добро пожаловать на наши курсы " + name);
+                let choice = confirm("Хотите стать Web-дизайнером?");
+                if (choice) {
+                    alert("Учите стили CSS и JavaScript!");
+                }
+                else {
+                    alert("Упускаете время");
+                }
+            }
+            function numb2() {
+                document.write(10+5, "<br>");
+                document.write("10"+"5", "<br>");
+                document.write("10"+5, "<br>");
+                document.write(5+"10", "<br>");
+                document.write("Результатом сложения строки и числа всегда будет строка");
+                document.write("<br><br>");
+            }
+            var numb3=() => {
+                let x = 3, y = 69;
+                let num1 = (35*y-25*x)/5+232;
+                let num2 = (8*y/x+5*x/y-43)*6;
+                document.write(num2 % num1, "<br>");
+                document.write('Первое выражеие равно: ' + num1 + '<br>' + 'Второе выражение равно: ' + num2 + '<br>');
+                document.write('Первое число равно:' + num1 + '<br>');
+                document.write('Второе число равно:' + num2 + '<br>');
+            }
+            function numb4() {
+                let num = prompt("Введите число");
+                if (num == 13 || (num < 99 && num > 69 && num % 7 == 0))
+                alert("Правильное значение");
+                else
+                alert("Неправильное значение");
+            }
+            function numb5() {
+                num1 = prompt("Введите первое число");
+                num2 = prompt("Введите второе число");
+                if (num1 > num2)
+                alert("Первое чило больше второго");
+                else if (num2 > num1)
+                alert("Второе число больше первого");
+                else
+                alert("Числа равны");
+                let years = prompt("Сколько Вам лет?");
+                years >= 13 ? alert("Добро пожаловать!") : alert("До свидания!");
+            }
+            function numb6(){
+                let now = new Date();
+            let day = now.getDay();
+            switch (day)
+            {
+	        case 1: 
+		    alert("Сегодня понедельник");
+		    break;
+	        case 2: 
+		    alert("Сегодня вторник");
+		    break;
+	        case 3: 
+		    alert("Сегодня среда");
+		    break;
+	        case 4: 
+		    alert("Сегодня четверг");
+		    break;
+	        case 5: 
+	     	alert("Сегодня пятница");
+		    break;
+        	case 6: 
+       		alert("Сегодня суббота");
+       		break;
+        	case 0: 
+      		alert("Сегодня воскресенье");
+      		break;
+            }
+        }
+        function numb7() {
+            const x16 = 0x1A45F22
+        const x8 = 0o6574
+        const x2 = 0b010011
+
+        alert("шестнадцатеричной число 0x1A45F22 = " + x16);
+        alert("восьмеричной число 0o6574 = " + x8);
+        alert("двоичной число 0b010011 = " + x2);
+        }
+        function numb8(){
+            var data = "Has Error"; 
+            try 
+            { 
+            var user = JSON.parse(data);  
+            }
+            catch (e) 
+            { 
+            alert( "Извините, в данных ошибка, мы попробуем получить их ещё раз" ); 
+            alert( e.name ); 
+            alert( e.message ); 
+            } 
+        }
+
+
+        
+        </script>
+    </head>
+    <body>
+        <input type='button' value='Первое задание' onclick='numb1()'/>
+        <input type='button' value='Второе задание' onclick='numb2()'/>
+        <input type='button' value='Третье задание' onclick='numb3()'/>
+        <input type='button' value='Четвертое задание' onclick='numb4()'/>
+        <input type='button' value='Пятое задание' onclick='numb5()'/>
+        <input type='button' value='Шестое задание' onclick='numb6()'/>
+        <input type='button' value='Седьмое задание' onclick='numb7()'/>
+        <input type='button' value='Восьмое задание' onclick='numb8()'/>
+    </body>
+</html>

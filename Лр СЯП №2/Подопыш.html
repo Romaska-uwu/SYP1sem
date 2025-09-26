@@ -1,0 +1,29 @@
+<html>
+<head>
+<script type='text/javascript'>
+// Функция выводит текст на страницу 
+function message() {
+document.write('Текст выводится на страницу с помощью JavaScript!');
+}
+</script>
+</head>
+<body>
+<input type='button' value='Нажми на меня' onclick='message()' />
+</body>
+</html>
+
+
+<script>
+    function numb1() {
+        alert("Вас приветсвует учебный центр");
+        let name = prompt("Ваше имя");
+        alert("Добро пожаловать на наши курсы " + name);
+        let choice = confirm("Хотите стать Web-дизайнером?");
+        if (choice) {
+            alert("Учите стили CSS и JavaScript!");
+        }
+        else {
+            alert("Упускаете время");
+        }
+    }
+</script>
